@@ -46,12 +46,13 @@ useEffect(() => {
     <div>
       {block && (
         <div className='block'>
-          <span>{block.id}</span>
-          <img src={block.image} alt="" />
-          <p>{block.title}</p>
-          <p>{block.price}</p>
-          <p><span>Phone:</span> {block.phone}</p>
-          <p><span>Website:</span> {block.website}</p>
+          <img src={block.image} alt="Image"/>
+          <div className='block-box' >
+            <p>{block.title}</p>
+            <h2>Price: {block.price}$</h2>
+            <p>{block.description}</p>
+            <p>{block.category}</p>
+          </div>
         </div>
       )}
       <ul>
