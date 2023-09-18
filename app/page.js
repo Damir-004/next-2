@@ -13,7 +13,7 @@ function Posts() {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch('https://fakestoreapi.com/products/');
+      const response = await fetch('https://fancy-speculoos-78ca83.netlify.app/products/');
       const data = await response.json();
       setPosts(data);
     } catch (error) {
