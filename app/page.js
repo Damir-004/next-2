@@ -13,7 +13,7 @@ function Posts() {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch('https://fancy-speculoos-78ca83.netlify.app/products/');
+      const response = await fetch('https://fakestoreapi.com/products/');
       const data = await response.json();
       setPosts(data);
     } catch (error) {
@@ -23,7 +23,7 @@ function Posts() {
 
   const handleUserClick = (postId) => {
     setBlockId(postId);
-    const newURL = `http://localhost:3000/products/${postId}`;
+    const newURL = `https://fancy-speculoos-78ca83.netlify.app/products/${postId}`;
     window.history.pushState(null, '', newURL);
   };
 
