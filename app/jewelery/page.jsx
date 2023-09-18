@@ -21,7 +21,7 @@ function Posts() {
   };
   const handleUserClick = (postId) => {
     setBlockId(postId);
-    const newURL = `http://localhost:3000/users/${postId}`;
+    const newURL = `https://fancy-speculoos-78ca83.netlify.app/users/${postId}`;
     window.history.pushState(null, '', newURL);
   };
   useEffect(() => {
