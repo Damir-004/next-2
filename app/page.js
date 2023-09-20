@@ -23,7 +23,7 @@ function Posts() {
 
   const handleUserClick = (postId) => {
     setBlockId(postId);
-    const newURL = `https://fancy-speculoos-78ca83.netlify.app/products/${postId}`;
+    const newURL = `http://localhost:3000/products/${postId}`;
     window.history.pushState(null, '', newURL);
   };
 
@@ -73,13 +73,17 @@ function Posts() {
       </div>
 
       <ul>
-        {filteredPosts.map((post) => (
-          <li key={post.id} style={blockId ? { display: 'none' } : {}}>
-            <img src={post.image} alt="Image"/>
-            <p>{post.title}</p>
-            <button className='button' onClick={() => handleUserClick(post.id)}>Post</button>
-          </li>
-        ))}
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post) => (
+            <li key={post.id} style={blockId ? { display: 'none' } : {}}>
+              <img src={post.image} alt="Image"/>
+              <p>{post.title}</p>
+              <button className='button' onClick={() => handleUserClick(post.id)}>Post</button>
+            </li>
+          ))
+        ) : (
+          <p className='empty'>Пусто</p>
+        )}
       </ul>
     </div>
   );
